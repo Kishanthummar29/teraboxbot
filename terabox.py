@@ -11,7 +11,7 @@ required_packages = ["telebot", "requests", "m3u8"]
 # Install missing packages
 for package in required_packages:
     try:
-      import(required_packages)
+        __import__(package)
     except ImportError:
         install(package)
 
@@ -108,14 +108,14 @@ def download_video(m3u8_url, video_id):
 
         # Concatenate all segments into one video file
         with open(video_path, 'wb') as video_file:
-          for segment_path in segment_paths:
+            for segment_path in segment_paths:
                 with open(segment_path, 'rb') as segment_file:
                     video_file.write(segment_file.read())
                 os.remove(segment_path)
-             return video_path
-       except Exception as e:
-           print(f"Error downloading video: {e}")
-           return None
+        return video_path
+    except Exception as e:
+        print(f"Error downloading video: {e}")
+        return None
 
 if __name__ == '__main__':
     bot.polling()
