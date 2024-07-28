@@ -11,7 +11,7 @@ required_packages = ["telebot", "requests", "m3u8"]
 # Install missing packages
 for package in required_packages:
     try:
-      import(package)
+      import(required_packages)
     except ImportError:
         install(package)
 
