@@ -22,7 +22,7 @@ import os
 from concurrent.futures import ThreadPoolExecutor
 
 # Replace with your Telegram bot token
-token = '7475536780:AAFMFLGMEM7NvpQP5Kr8LjCbSdI5dBw4l5k'
+token = '6496212304:AAE9BrtjXFMy_N0gRWRiuUckS7rkBM4sTis'
 bot = telebot.TeleBot(token)
 
 # Extract video ID from any Terabox URL
